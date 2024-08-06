@@ -1,0 +1,14 @@
+FROM pocketbase/pocketbase:latest
+
+# Configurer les variables d'environnement
+ENV POCKETBASE_DB_TYPE=sqlite
+ENV POCKETBASE_DB_PATH=/data/pocketbase.db
+
+# Copier les fichiers de configuration
+COPY config.json /etc/pocketbase/
+
+# Exposer le port 8080
+EXPOSE 8080
+
+# Démarrer PocketBase
+CMD ["pocketbase", "start"]

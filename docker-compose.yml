@@ -1,0 +1,11 @@
+version: '3'
+services:
+  pocketbase:
+    image: pocketbase/pocketbase:latest
+    ports:
+      - "8080:8080"
+    environment:
+      - POCKETBASE_DB_TYPE=sqlite
+      - POCKETBASE_DB_PATH=/data/pocketbase.db
+    volumes:
+      - ./data:/data
